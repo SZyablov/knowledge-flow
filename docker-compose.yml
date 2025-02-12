@@ -4,10 +4,12 @@ services:
       - my_network
     build: ./backend
     ports:
-      - "8000:8000"
+      - "9898:8000"
     environment:
       DEBUG: "true"
       API_PROVIDER: "groq"
+    depends_on:
+      - searxng
 
   ui:
     networks:
@@ -17,6 +19,33 @@ services:
       - "7860:7860"
     depends_on:
       - api
+
+  searxng:
+    container_name: searxng
+    image: docker.io/searxng/searxng:latest
+    restart: unless-stopped
+    networks:
+      - my_network
+    ports:
+      - "127.0.0.1:9998:9998"
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    environment:
+      - SEARXNG_BASE_URL=http://localhost/
+      - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS:-4}
+      - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS:-4}
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+
 
 networks:
   my_network:

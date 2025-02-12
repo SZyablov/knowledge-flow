@@ -1,8 +1,7 @@
 import gradio as gr
 import requests
-import logging
 
-API_URL = "http://localhost:8000/ask"
+API_URL = "http://api:8000/ask"
 
 def format_response(data):
     response = ""
