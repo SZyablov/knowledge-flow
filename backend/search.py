@@ -57,7 +57,7 @@ async def gather(tasks):
 
 async def fetch_searxng(session, q):
 
-    SEARXNG_URL = f"http://searxng:9998/search?format=json&q=google: {q}"
+    SEARXNG_URL = f"http://searxng:8080/search?format=json&q=google: {q}"
 
     urls_data = {}
 
@@ -78,7 +78,7 @@ async def fetch_searxng(session, q):
                     urls_data[url] += len(results['results']) - n
 
             else:
-                print(f"Ошибка: {response.status_code}")
+                print(f"Ошибка: {response.status}")
 
     except Exception as e:
         print(f"Произошла ошибка при выполнении запроса: {e}")

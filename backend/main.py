@@ -24,8 +24,9 @@ from pydantic import BaseModel
 import json
 import traceback
 from datetime import datetime
+import logging
 
-
+logging.basicConfig(level=logging.DEBUG)
 
 set_client(API_PROVIDER)
 

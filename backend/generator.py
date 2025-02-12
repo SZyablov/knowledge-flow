@@ -39,8 +39,6 @@ def generate_completion(prompt):
         max_tokens=None,
         temperature=0.7,
         top_p=0.7,
-        top_k=50,
-        repetition_penalty=1,
         stop=["<|eot_id|>","<|eom_id|>"],
         stream=False,
     )
@@ -55,8 +53,6 @@ def stream_completion(prompt):
         max_tokens=None,
         temperature=0.7,
         top_p=0.7,
-        top_k=50,
-        repetition_penalty=1,
         stop=["<|eot_id|>","<|eom_id|>"],
         stream=True,
     )
