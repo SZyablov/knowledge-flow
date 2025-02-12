@@ -32,7 +32,7 @@ set_client(API_PROVIDER)
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[HOST if not DEBUG else "*"],
+    allow_origins=[HOST],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
