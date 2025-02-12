@@ -6,3 +6,4 @@ pydantic
 # sentence-transformers
 openai
 newspaper3k
+lxml_html_clean
