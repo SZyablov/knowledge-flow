@@ -26,7 +26,7 @@ import traceback
 from datetime import datetime
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 set_client(API_PROVIDER)
 
