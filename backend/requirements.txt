@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+faiss-cpu
+aiohttp
+pydantic
+# sentence-transformers
+openai
+newspaper3k

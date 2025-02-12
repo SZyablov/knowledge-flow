@@ -1,0 +1,19 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.contain button {
+    background-color: #007bff !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+hr{
+    margin: 1em 0;
+}

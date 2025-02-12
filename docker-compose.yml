@@ -1,0 +1,25 @@
+services:
+  api:
+    networks:
+      - my_network
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      DEBUG: "true"
+      API_PROVIDER: "groq"
+
+  ui:
+    networks:
+      - my_network
+    build: ./ui
+    ports:
+      - "7860:7860"
+    depends_on:
+      - api
+
+networks:
+  my_network:
+    driver: bridge
+    name: my_bridge_network
+    external: true

@@ -1,0 +1,15 @@
+services:
+  api:
+    environment:
+
+      # Измени на false, если планируешь запускать общедоступный инстанс
+      DEBUG: "true" 
+      # Доступные провайдеры:
+      #   - groq
+      #   - together
+      API_PROVIDER: "groq"
+
+      # Раскомментируй строку и введи в неё API ключ
+      
+      # GROQ_API_KEY: "api_key"
+      # TOGETHER_AI_API_KEY: "api_key"
