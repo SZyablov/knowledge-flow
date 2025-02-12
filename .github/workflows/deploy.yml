@@ -1,4 +1,4 @@
-name: Deploy to Kubernetes
+name: Deploy to Server
 
 on:
   push:
@@ -10,24 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
-      - name: Add SSH private key to agent
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Deploy to Server
-        env:
-          SERVER_USER: ${{ secrets.VPS_USERNAME }}
-          SERVER_IP: ${{ secrets.VPS_IP }}
-          APP_DIR: ${{ secrets.APP_DIR }}
-        run: |
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP "
-          cd $APP_DIR &&
-          git remote set-url origin git@github.com:SZyablov/knowledge-flow.git && 
-          git pull origin dev &&
+    - name: Install sshpass
+      run: sudo apt-get install -y sshpass
+
+    - name: SSH into server and deploy application
+      run: |
+        sshpass -p "${{ secrets.SERVER_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} << EOF
+          cd ${{ secrets.APP_DIR }}
+
+          git config --global credential.helper store
+          echo "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" > ~/.git-credentials
+
+          git pull origin dev
+
           docker-compose up --build -d
-          "
-
+        EOF
