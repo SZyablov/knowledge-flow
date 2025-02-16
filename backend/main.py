@@ -1,6 +1,7 @@
 from fastapi import FastAPI
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.encoders import jsonable_encoder
 
 from generator import (
     decide_how_to_answer, 
@@ -43,6 +44,7 @@ app.add_middleware(
 
 class QueryRequest(BaseModel):
     query: str
+    stream: str = True
 
 @app.post("/ask")
 async def ask_rag(request: QueryRequest):
@@ -52,6 +54,7 @@ async def ask_rag(request: QueryRequest):
 
     print(f"Received request: {json.dumps(request.model_dump())}")
     query = request.query
+    stream = request.stream
 
     try:
         decision = json.loads(
@@ -103,7 +106,14 @@ async def ask_rag(request: QueryRequest):
         print(f'🕑 Обработка текстов за {(end-start).total_seconds():.2f} сек 🕑')
         start = datetime.now()
 
-        return StreamingResponse(extract_info(relevant, query), media_type="text/plain")
+        if stream:
+            return StreamingResponse(extract_info(relevant, query), media_type="text/plain")
+        else:
+            text = ''
+            for chunk in extract_info(relevant, query):
+                text += chunk
+            return {"result": text}
+
         
     except:
         print(traceback.format_exc())
