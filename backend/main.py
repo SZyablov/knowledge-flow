@@ -41,7 +41,6 @@ app.add_middleware(
 )
 
 
-
 class QueryRequest(BaseModel):
     query: str
     stream: str = True
