@@ -32,8 +32,8 @@ LLM, сопровождая его ссылками на источники.
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/)
 [![Docker](https://img.shields.io/badge/-Docker-464646?logo=docker)](https://www.docker.com/)
-[![SearxNG](https://img.shields.io/badge/-SearxNG-46a247?logo=search)](https://searxng.github.io/searxng/)
-[![Gradio](https://img.shields.io/badge/Gradio-orange?logo=gradio)](https://www.gradio.app/)
+[![SearxNG](https://img.shields.io/badge/-SearxNG-46a247)](https://searxng.github.io/searxng/)
+[![Gradio](https://img.shields.io/badge/Gradio-orange)](https://www.gradio.app/)
 
 ## Установка
 
