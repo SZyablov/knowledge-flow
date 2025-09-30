@@ -5,16 +5,8 @@ CI](https://github.com/SZyablov/knowledge-flow/actions/workflows/docker-image.ym
 
 ## Описание проекта
 
-```{=html}
-<details>
-```
-```{=html}
-<summary>
-```
-Подробнее
-```{=html}
-</summary>
-```
+<details><summary>Подробнее</summary>
+    
 ### Основная информация
 
 Сервис позволяет выполнять
@@ -34,9 +26,8 @@ LLM, сопровождая его ссылками на источники.
 -   Индексация текста
 -   Формирование итогового ответа с указанием ссылок
 
-```{=html}
 </details>
-```
+
 ## Технологии
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/)
