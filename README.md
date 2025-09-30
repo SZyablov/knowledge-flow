@@ -1,8 +1,5 @@
 # Knowledge Flow 💡 
 
-[![Docker Image
-CI](https://github.com/SZyablov/knowledge-flow/actions/workflows/docker-image.yml/badge.svg)](https://github.com/SZyablov/knowledge-flow/actions/workflows/docker-image.yml)
-
 ## Описание проекта
 
 <details><summary>Подробнее</summary>
