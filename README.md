@@ -31,6 +31,7 @@ LLM, сопровождая его ссылками на источники.
 [![Docker](https://img.shields.io/badge/-Docker-464646?logo=docker)](https://www.docker.com/)
 [![SearxNG](https://img.shields.io/badge/-SearxNG-46a247)](https://searxng.github.io/searxng/)
 [![Gradio](https://img.shields.io/badge/Gradio-orange)](https://www.gradio.app/)
+[![Faiss](https://img.shields.io/badge/Faiss-lightgrey)](https://github.com/facebookresearch/faiss)
 
 ## Установка
 
@@ -60,7 +61,6 @@ docker-compose build
 
 # Стандарнтый запуск
 docker-compose up
-
 # Detached режим
 docker-compose up -d
 ```
