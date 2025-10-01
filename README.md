@@ -30,6 +30,7 @@ LLM, сопровождая его ссылками на источники.
 ## Технологии
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-blue?logo=FastAPI)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/-Docker-464646?logo=docker)](https://www.docker.com/)
 [![SearxNG](https://img.shields.io/badge/-SearxNG-46a247)](https://searxng.github.io/searxng/)
 [![Gradio](https://img.shields.io/badge/Gradio-orange)](https://www.gradio.app/)
