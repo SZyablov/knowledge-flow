@@ -57,6 +57,11 @@ cd knowledge-flow
 
 ``` bash
 docker-compose build
+
+# Стандарнтый запуск
+docker-compose up
+
+# Detached режим
 docker-compose up -d
 ```
 
