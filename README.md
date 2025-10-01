@@ -1,5 +1,7 @@
 # Knowledge Flow 💡 
 
+![Image](https://github.com/SZyablov/knowledge-flow/blob/dev/demo.png?raw=true)
+
 ## Описание проекта
 
 <details><summary>Подробнее</summary>
