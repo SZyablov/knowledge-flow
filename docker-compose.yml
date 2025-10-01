@@ -52,5 +52,5 @@ services:
 networks:
   my_network:
     driver: bridge
-    name: my_bridge_network
-    external: true
+      #name: my_bridge_network
+      #external: true

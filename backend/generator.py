@@ -62,7 +62,8 @@ def stream_completion(prompt):
         if choices:
             delta = chunk.choices[0].delta
             if delta:
-                yield delta.content
+                if delta.content:
+                    yield delta.content
 
 # @sync_stopwatch(description='deciding how to answer')
 def decide_how_to_answer(user_prompt):
