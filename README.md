@@ -9,7 +9,7 @@
 [![Gradio](https://img.shields.io/badge/Gradio-orange)](https://www.gradio.app/)
 [![Faiss](https://img.shields.io/badge/Faiss-lightgrey)](https://github.com/facebookresearch/faiss)
 
-![Image](https://github.com/SZyablov/knowledge-flow/blob/dev/demo.png?raw=true)
+![Image](https://github.com/QuantoniA7/knowledge-flow/blob/dev/demo.png?raw=true)
 
 ## Описание проекта
 
@@ -47,7 +47,7 @@ LLM, сопровождая его ссылками на источники.
 ### Шаг 1: Клонирование репозитория
 
 ``` bash
-git clone https://github.com/SZyablov/knowledge-flow.git
+git clone https://github.com/QuantoniA7/knowledge-flow.git
 cd knowledge-flow
 ```
 
